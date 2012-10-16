@@ -12,7 +12,7 @@ module ACH::Records
     field :company_discretionary_data, String,
         lambda { |f| left_justify(f, 20)}, ''
     field :company_identification, String,
-        lambda { |f| f.size == 9 ? '1' + f : f }, nil, /\A\d{9,10}\Z/,
+        lambda { |f| f.size == 9 ? ' ' + f : f }, nil, /\A\d{9,10}\Z/,
         'Company Tax ID'
     # TODO This should be used to determine whether other records are valid for
     # for this code. Should there be a Class for each code?
